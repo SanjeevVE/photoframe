@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import EventSelection from './components/EventSelection';
+import PhotoFrame from './components/PhotoFrame';
 
 function App() {
 
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
+   <Router>
+      <Routes>
+        <Route path="/" element={<EventSelection />} />
+        <Route path="/photo-frame" element={<PhotoFrame />} />
+      </Routes>
+   </Router>
+  );
 }
 
-export default App
+export default App;
